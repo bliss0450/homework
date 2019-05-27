@@ -4,11 +4,11 @@ package lesson_1;
 
 public class dFour {
 
-        public static double a = 5;
-        public static double b = 10;
+        public static int a = 5;
+        public static int b = 10;
         public static void main(String[] args) {
 
-            double result = a / b;
+            double result = (double) a / b;
 
             System.out.println(result);
         }

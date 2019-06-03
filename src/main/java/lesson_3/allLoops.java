@@ -15,6 +15,7 @@ public class allLoops {
         whileCycle();
         forCycle();
         doWhileCycle();
+        forEach();
     }
     
     static void whileCycle() {
@@ -43,5 +44,13 @@ public class allLoops {
             System.out.println(i);
             i++;
         } while (i<=20);
+    }
+
+    static void forEach() {
+        int[] ar = {10,11,12,13,14,15,16,17,18,19,20};
+        System.out.println("For Each");
+        for (int num : ar) {
+            System.out.println(num);
+        }
     }
 }

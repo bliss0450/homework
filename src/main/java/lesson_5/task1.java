@@ -5,18 +5,21 @@
  */
 package lesson_5;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
- * 1. Create ArrayList and print it.
+ * 1. Create method to check: if number < 0 print “Number < 0”, if number > 0
+ * print “Number > 0” if number = 0 throw your own exception
  */
 public class task1 {
 
-    public static void main(String[] args) {
-        ArrayList<String> ar = new ArrayList<String>();
-        ar.add("one");
-        ar.add("two");
-        System.out.println(Arrays.toString(ar.toArray()));
+    public void getException(int i) throws Task1CustomException {
+
+        if (i < 0) {
+            System.out.println("i < 0");
+        } else if (i > 0) {
+            System.out.println("i > 0");
+        } else {
+            throw new Task1CustomException("i == 0");
+        }
     }
+
 }

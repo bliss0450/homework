@@ -6,42 +6,36 @@
 package lesson_5;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Random;
+import java.util.Scanner;
 
 /**
- * "6. Create ArrayList of Strings. Add 10 different Strings to it. Using any
- * cycle find the longest String in the list and print it out. If there are
- * several String with the same legth - print each from a new line."
+ * "6. Write a program that will enter numbers from the keyboard. The code for
+ * reading numbers from the keyboard must be in the readData method. The code
+ * inside the readData is wrapped in a try..catch. If the user entered some
+ * text, instead of entering a number, the method should catch the exception and
+ * display all previously entered numbers as a result. Numbers output from a new
+ * line preserving the order of input."
  */
 public class task6 {
 
-    public static String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-    public static String randomAlphaNumeric(int count) {
-        StringBuilder builder = new StringBuilder();
-        while (count-- != 0) {
-            int character = (int) (Math.random() * ALPHA_NUMERIC_STRING.length());
-            builder.append(ALPHA_NUMERIC_STRING.charAt(character));
-        }
-        return builder.toString();
+    public static void main(String[] args) {
+        readData();
     }
 
-    public static void main(String[] args) {
-        ArrayList<String> ar = new ArrayList<>();
-        Random rand = new Random();
+    private static void readData() {
+        Scanner scan = new Scanner(System.in);
+        ArrayList ar = new ArrayList<Integer>();
 
-        for (int i = 0; i < 15; i++) {
-            ar.add(randomAlphaNumeric(rand.nextInt(15)));
-        }
-
-        System.out.println();
-        System.out.println("and now the largest strings:");
-        for (String var : ar) {
-            if (var.length() == Collections.max(ar, Comparator.comparing(s -> s.length())).length()) {
-                System.out.println(var);
+        for (;;) {
+            try {
+                ar.add(scan.nextInt());
+            } catch (Exception e) {
+                System.out.println("Got it!");
+                break;
             }
         }
+
+        System.out.println(ar.toString());
     }
+
 }

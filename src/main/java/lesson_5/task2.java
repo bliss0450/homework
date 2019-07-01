@@ -6,12 +6,27 @@
 package lesson_5;
 
 /**
-2. Create ENUM and print.
+ * "2. Fix the method with try-catch to get the correct result of division:
+ * public class Main {
+ *
+ * public static void main(String[] args) { System.out.println(divideByZero());
+ * }
+ *
+ * public static int divideByZero() { int a = 5; int b = 0; return a / b; } }"
  */
 public class task2 {
+
     public static void main(String[] args) {
-        for (enumTask2 var : enumTask2.values()) {
-            System.out.println(var);
+        try {
+        System.out.println(divideByZero());
+        } catch(Exception e) {
+            System.out.println("You are trying to devide by zero");
         }
+    }
+
+    public static int divideByZero() {
+        int a = 5;
+        int b = 0;
+        return a / b;
     }
 }

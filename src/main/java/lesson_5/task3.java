@@ -5,19 +5,39 @@
  */
 package lesson_5;
 
-import java.util.HashMap;
-
 /**
-3. Create Map vehicles : vehicles.put("BMW", 5);, print
+ * "3. Finish the program to handle all the possible exceptions: public class
+ * Main {
+ *
+ * public static void main(String[] args) { int a = args.length;
+ * System.out.println(a);
+ *
+ * int b = 10 / a; int[] c = {1}; System.out.println(c[1]);
+ *
+ * }
+ *
+ * }
+ *
+ * Print the cause of the exception to the console."
  */
 public class task3 {
-      public static void main(String[] args) {
 
-    // Create a HashMap object called capitalCities
-    HashMap<String, Integer> vehicles = new HashMap<String, Integer>();
+    public static void main(String[] args) {
+        int a = args.length;
+        System.out.println(a);
 
-    // Add keys and values (Country, City)
-    vehicles.put("BMW", 5);
-    System.out.println(vehicles); 
-  }
+        try {
+        int b = 10 / a;
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+        int[] c = {1};
+        
+        try {
+        System.out.println(c[1]);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
 }

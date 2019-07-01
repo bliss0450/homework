@@ -5,47 +5,29 @@
  */
 package lesson_4;
 
+import java.util.Arrays;
+import java.util.Random;
+
 /**
- *
- * @author a.lemeshchuk
+Create an array of 15 random integers from the segment [0;   9]. Display the array on the screen. Count how many in the array of even elements and display this number on the screen on a separate line.
  */
 public class task4 {
-        public static void main(String[] args) {
-    }
 
-    public class Worker {
+    public static void main(String[] args) {
+        int[] ar = new int[15];
+        int even = 0;
 
-    }
+        Random rand = new Random();
 
-    public class Clerk extends Worker {
+        for (int i = 0; i < ar.length; i++) {
+            ar[i] = rand.nextInt(9);
+            if (ar[i] % 2 == 0) {
+                even++;
+            }
+        }
 
-    }
-
-    public class IT extends Worker {
-
-    }
-
-    public class Programmer extends IT {
-
-    }
-
-    public class ProjectManager extends IT {
-
-    }
-
-    public class CTO extends IT {
-
-    }
-
-    public class OfficeManager extends Clerk {
-
-    }
-
-    public class HR extends Clerk {
-
-    }
-
-    public class Cleaner extends Clerk {
+        System.out.println("Array - " + Arrays.toString(ar));
+        System.out.println("Even numbers : " + even);
 
     }
 }

@@ -19,7 +19,7 @@ public class MainPageTest {
     }
 
     @Test
-    public void checkTotals() {
+    public void checkTotalProducts() {
         MainPage mainPage = new MainPage(driver);
         mainPage.openMainPage();
         SearchPage searchPage = mainPage.searchBarEnterText("Blouse");
@@ -28,11 +28,54 @@ public class MainPageTest {
         driver.navigate().refresh();
 
         Assert.assertEquals(cartPage.totalProducts().getText(),"$54.00");
-        Assert.assertEquals(cartPage.totalShipping().getText(),"$2.00");
-        Assert.assertEquals(cartPage.totalWithoutTax().getText(),"$56.00");
-        Assert.assertEquals(cartPage.totalTax().getText(),"$0.00");
-        Assert.assertEquals(cartPage.total().getText(),"$56.00");
+    }
 
+    @Test
+    public void checkTotalShipping() {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.openMainPage();
+        SearchPage searchPage = mainPage.searchBarEnterText("Blouse");
+        CartPage cartPage = searchPage.addToCartFromListView();
+        cartPage.addOne();
+        driver.navigate().refresh();
+
+        Assert.assertEquals(cartPage.totalShipping().getText(),"$2.00");
+    }
+
+    @Test
+    public void checkTotalWithoutTax() {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.openMainPage();
+        SearchPage searchPage = mainPage.searchBarEnterText("Blouse");
+        CartPage cartPage = searchPage.addToCartFromListView();
+        cartPage.addOne();
+        driver.navigate().refresh();
+
+        Assert.assertEquals(cartPage.totalWithoutTax().getText(),"$56.00");
+    }
+
+    @Test
+    public void checkTotalTax() {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.openMainPage();
+        SearchPage searchPage = mainPage.searchBarEnterText("Blouse");
+        CartPage cartPage = searchPage.addToCartFromListView();
+        cartPage.addOne();
+        driver.navigate().refresh();
+
+        Assert.assertEquals(cartPage.totalTax().getText(),"$0.00");
+    }
+
+    @Test
+    public void checkTotal() {
+        MainPage mainPage = new MainPage(driver);
+        mainPage.openMainPage();
+        SearchPage searchPage = mainPage.searchBarEnterText("Blouse");
+        CartPage cartPage = searchPage.addToCartFromListView();
+        cartPage.addOne();
+        driver.navigate().refresh();
+
+        Assert.assertEquals(cartPage.total().getText(),"$56.00");
     }
 
     @Test

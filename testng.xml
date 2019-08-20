@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="test">
+    <test name = "login test">
+        <classes>
+            <class name="lesson_11.LoginTest">
+                <methods>
+                    <include name="check8errors"/>
+                    <include name="check5errors"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="main page test">
+        <classes>
+            <class name="lesson_11.MainPaigeTest">
+                <methods>
+                    <include name="checkTotalProducts"/>
+                    <include name="checkTotalShipping"/>
+                    <include name="checkTotalWithoutTax"/>
+                    <include name="checkTotalTax"/>
+                    <include name="checkTotal"/>
+                    <include name="checkEmptyCartMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
